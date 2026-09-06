@@ -1287,3 +1287,123 @@ body {
 
   color: var(--purple);
 }
+
+/* =========================
+   MOBILE PHONE FIX
+   ========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Header */
+  .header-inner {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  .cart-button {
+    padding: 12px 18px;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  /* Featured Earrings */
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .product-card {
+    width: 100%;
+    min-width: 0;
+    border-radius: 20px;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 180px;
+    padding: 12px;
+  }
+
+  .product-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-info {
+    padding: 16px;
+  }
+
+  .product-card h3 {
+    font-size: 20px;
+    line-height: 1.25;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .product-tag {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .add-cart {
+    width: 100%;
+    padding: 13px 10px;
+    font-size: 16px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .color-select {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* Extra-small phones */
+@media (max-width: 400px) {
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .cart-button {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+
+  .product-grid {
+    gap: 10px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product-card h3 {
+    font-size: 18px;
+  }
+
+  .product-image {
+    height: 155px;
+  }
+}
