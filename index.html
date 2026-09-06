@@ -1109,7 +1109,7 @@
 
 
       <p class="checkout-note">
-        Secure credit-card checkout will be connected later.
+        Secure checkout powered by Stripe.
       </p>
 
 
@@ -1127,6 +1127,27 @@
 
 
   <script src="script.js"></script>
+
+  <script>
+    const stripeCheckoutButton = document.getElementById("checkoutButton");
+
+    if (stripeCheckoutButton) {
+      stripeCheckoutButton.addEventListener("click", () => {
+        const cartCountValue = Number(
+          document.getElementById("cartCount")?.textContent || 0
+        );
+
+        if (cartCountValue === 0) {
+          alert("Your cart is empty.");
+          return;
+        }
+
+        window.location.href =
+          "https://buy.stripe.com/eVq4gBaab5ke4lk03vcs800";
+      });
+    }
+  </script>
+
 
 
 </body>
