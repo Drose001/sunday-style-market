@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunday Style Market</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand">Sunday Style Market</a>
+      <nav class="nav">
+        <a href="#shop">Shop</a>
+        <a href="#game-day">Game Day</a>
+        <a href="#new">New Arrivals</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="cart-button" id="cartButton">
+        Cart <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">HANDMADE • FUN • GAME DAY READY</p>
+        <h1>Style made for every Sunday.</h1>
+        <p class="hero-copy">
+          Shop statement accessories, game-day favorites, gifts, and handmade pieces
+          designed to bring a little extra personality to your look.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#shop">Shop Now</a>
+          <a class="btn btn-light" href="#game-day">Game Day Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">SHOP YOUR STYLE</p>
+          <h2>Featured Collections</h2>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card">
+            <div class="category-icon">🏈</div>
+            <h3>Game Day</h3>
+            <p>Football-inspired colors, shapes, and statement pieces.</p>
+          </article>
+          <article class="category-card">
+            <div class="category-icon">✨</div>
+            <h3>Earrings</h3>
+            <p>Fun, lightweight styles for everyday wear and special events.</p>
+          </article>
+          <article class="category-card">
+            <div class="category-icon">💫</div>
+            <h3>Accessories</h3>
+            <p>Bracelets, keychains, gifts, and more as your shop grows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="container">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">SHOP</p>
+            <h2>Featured Products</h2>
+          </div>
+          <p class="section-note">Sample products for now — replace with your real photos later.</p>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-name="Red & Gold Game Day Earrings" data-price="18">
+            <div class="product-image placeholder">
+              <span>Photo Coming Soon</span>
+            </div>
+            <div class="product-info">
+              <p class="product-tag">GAME DAY</p>
+              <h3>Red & Gold Game Day Earrings</h3>
+              <p class="price">$18.00</p>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Blue & Silver Statement Earrings" data-price="18">
+            <div class="product-image placeholder">
+              <span>Photo Coming Soon</span>
+            </div>
+            <div class="product-info">
+              <p class="product-tag">GAME DAY</p>
+              <h3>Blue & Silver Statement Earrings</h3>
+              <p class="price">$18.00</p>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Game Day Bracelet" data-price="14">
+            <div class="product-image placeholder">
+              <span>Photo Coming Soon</span>
+            </div>
+            <div class="product-info">
+              <p class="product-tag">ACCESSORIES</p>
+              <h3>Game Day Bracelet</h3>
+              <p class="price">$14.00</p>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Custom Color Earrings" data-price="20">
+            <div class="product-image placeholder">
+              <span>Photo Coming Soon</span>
+            </div>
+            <div class="product-info">
+              <p class="product-tag">CUSTOM</p>
+              <h3>Custom Color Earrings</h3>
+              <p class="price">$20.00</p>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-day" id="game-day">
+      <div class="container game-day-wrap">
+        <div>
+          <p class="eyebrow">GAME DAY COLLECTION</p>
+          <h2>Bring your team colors.</h2>
+          <p>
+            This section can feature football-inspired pieces in different color combinations.
+            We can add your actual products one at a time when you photograph them.
+          </p>
+        </div>
+        <a href="#shop" class="btn btn-dark">Browse Game Day</a>
+      </div>
+    </section>
+
+    <section class="new-section" id="new">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">COMING SOON</p>
+          <h2>New Arrivals</h2>
+          <p class="section-note">
+            Add your newest handmade items here as you make them.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-wrap">
+        <div>
+          <p class="eyebrow">ABOUT THE SHOP</p>
+          <h2>Made to stand out.</h2>
+        </div>
+        <p>
+          Sunday Style Market is a growing handmade shop featuring game-day styles,
+          accessories, gifts, and creative pieces. This website is designed to grow
+          with your business as you add more products.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Sunday Style Market</p>
+      <p>Handmade style for every Sunday.</p>
+    </div>
+  </footer>
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+      <p class="empty-cart">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="checkout-button" id="checkoutButton">Checkout</button>
+      <p class="checkout-note">Credit-card checkout will be connected later.</p>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
