@@ -3,21 +3,30 @@
 
 <head>
 
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
-  />
+  >
 
-  <title>
-    Sunday Style Market
-  </title>
+  <title>Sunday Style Market</title>
 
   <link
     rel="stylesheet"
     href="style.css"
-  />
+  >
+
+
+  <!-- =====================================================
+       PAYPAL CART SCRIPT
+       KEEP THIS ONLY ONE TIME
+  ====================================================== -->
+
+  <script
+    src="https://www.paypalobjects.com/ncp/cart/cart.js"
+    data-merchant-id="YH64KA9EQPVCE">
+  </script>
 
 </head>
 
@@ -25,13 +34,14 @@
 <body>
 
 
-  <!-- =========================
+  <!-- =====================================================
        HEADER
-  ========================== -->
+  ====================================================== -->
 
   <header class="site-header">
 
     <div class="container nav-wrap">
+
 
       <a
         href="#"
@@ -62,17 +72,19 @@
       </nav>
 
 
-      <button
-        class="cart-button"
-        id="cartButton"
-      >
-        🛍️ Cart
+      <!-- =================================================
+           PAYPAL VIEW CART
+           ONLY ONE VIEW CART BUTTON
+      ================================================== -->
 
-        <span id="cartCount">
-          0
-        </span>
+      <div class="paypal-view-cart">
 
-      </button>
+        <paypal-cart-button
+          data-id="pp-view-cart">
+        </paypal-cart-button>
+
+      </div>
+
 
     </div>
 
@@ -80,22 +92,29 @@
 
 
 
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
   <main>
 
 
-    <!-- =========================
+    <!-- =====================================================
          HERO
-    ========================== -->
+    ====================================================== -->
 
     <section class="hero">
+
 
       <div
         class="hero-shape shape-one"
       ></div>
 
+
       <div
         class="hero-shape shape-two"
       ></div>
+
 
       <div
         class="hero-shape shape-three"
@@ -103,6 +122,7 @@
 
 
       <div class="container hero-content">
+
 
         <p class="eyebrow">
           ✨ HANDMADE • FUN • GAME DAY READY ✨
@@ -134,6 +154,7 @@
 
         <div class="hero-actions">
 
+
           <a
             class="btn btn-primary"
             href="#shop"
@@ -149,7 +170,9 @@
             🏈 Game Day Collection
           </a>
 
+
         </div>
+
 
       </div>
 
@@ -157,26 +180,30 @@
 
 
 
-    <!-- =========================
+    <!-- =====================================================
          LIFESTYLE BANNER
-    ========================== -->
+    ====================================================== -->
 
     <section class="lifestyle-banner">
+
 
       <div class="container lifestyle-wrap">
 
 
         <div class="lifestyle-image">
 
+
           <img
             src="Sunday-Style-Market/images/Diamond.png"
             alt="Sunday Style Market game day earrings lifestyle photo"
-          />
+          >
+
 
         </div>
 
 
         <div class="lifestyle-text">
+
 
           <p class="eyebrow">
             ✨ GAME DAY STYLE
@@ -186,7 +213,9 @@
           <h2>
 
             Made to wear.
-            <br />
+
+            <br>
+
             Made to stand out.
 
           </h2>
@@ -210,24 +239,29 @@
             Shop Game Day
           </a>
 
+
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =========================
+    <!-- =====================================================
          FEATURED COLLECTIONS
-    ========================== -->
+    ====================================================== -->
 
     <section class="categories">
+
 
       <div class="container">
 
 
         <div class="section-heading">
+
 
           <p class="eyebrow">
             💖 SHOP YOUR STYLE
@@ -247,6 +281,7 @@
 
           </p>
 
+
         </div>
 
 
@@ -254,9 +289,10 @@
         <div class="category-grid">
 
 
-          <!-- GAME DAY EARRINGS -->
+          <!-- GAME DAY -->
 
           <article class="category-card game-card">
+
 
             <div class="category-icon">
               🏈
@@ -282,6 +318,7 @@
               Shop Game Day →
             </a>
 
+
           </article>
 
 
@@ -289,6 +326,7 @@
           <!-- EARRINGS -->
 
           <article class="category-card earrings-card">
+
 
             <div class="category-icon">
               ✨
@@ -314,6 +352,7 @@
               Shop Earrings →
             </a>
 
+
           </article>
 
 
@@ -321,6 +360,7 @@
           <!-- COMING SOON -->
 
           <article class="category-card accessories-card">
+
 
             <div class="category-icon">
               💕
@@ -345,32 +385,38 @@
               See What's Coming →
             </a>
 
+
           </article>
 
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =========================
-         FEATURED PRODUCTS
-    ========================== -->
+    <!-- =====================================================
+         SHOP
+    ====================================================== -->
 
     <section
       class="shop-section"
       id="shop"
     >
 
+
       <div class="container">
 
 
         <div class="section-heading split">
 
+
           <div>
+
 
             <p class="eyebrow">
               🛍️ SHOP
@@ -381,7 +427,9 @@
               Featured Earrings
             </h2>
 
+
           </div>
+
 
         </div>
 
@@ -394,461 +442,309 @@
 
 
 
-          <!-- =====================
-               PRODUCT 1
-               SAN FRANCISCO
-          ====================== -->
+         <!-- =====================================================
+     PRODUCT 1
+     PAYPAL TEST PRODUCT
+====================================================== -->
 
-          <article
-            class="product-card"
-            data-name="San Francisco Game Day Earrings"
-            data-price="18"
-          >
+<article class="product-card paypal-card">
 
-            <div class="product-image">
+  <div class="product-info">
 
-              <img
-                src="Sunday-Style-Market/images/gold-49ers-earrings.png"
-                alt="San Francisco gold game day earrings"
-                class="product-photo product-option-image"
-              />
+    <p class="product-tag">
+      🏈 GAME DAY
+    </p>
 
-            </div>
+    <!-- PAYPAL WILL DISPLAY THE PRODUCT -->
+    <paypal-add-to-cart-button
+      data-id="D5SDSHKANLT7C">
+    </paypal-add-to-cart-button>
 
+  </div>
 
-            <div class="product-info">
+</article>
 
-              <p class="product-tag">
-                🏈 GAME DAY
-              </p>
 
+<!-- =====================================================
+     PRODUCT 2
+     RED & GOLD GAME DAY EARRINGS
+====================================================== -->
 
-              <h3>
-                San Francisco Game Day Earrings
-              </h3>
+<article class="product-card paypal-product-card">
 
+  <div class="product-info">
 
-              <div class="product-option">
+    <p class="product-tag">
+      🏈 GAME DAY
+    </p>
 
-                <label for="sf-color">
-                  Color
-                </label>
+    <!-- =================================================
+         PRODUCT 2 PAYPAL
+    ================================================== -->
 
+    <paypal-add-to-cart-button
+      data-id="R92AYB4HJM536">
+    </paypal-add-to-cart-button>
 
-                <select
-                  id="sf-color"
-                  class="color-select"
-                >
+    <script>
+      cartPaypal.AddToCart({
+        id: "R92AYB4HJM536"
+      });
+    </script>
 
-                  <option
-                    value="Gold"
-                    data-image="Sunday-Style-Market/images/gold-49ers-earrings.png"
-                  >
-                    Gold
-                  </option>
+    <!-- =================================================
+         END PRODUCT 2 PAYPAL
+    ================================================== -->
 
+  </div>
 
-                  <option
-                    value="Red & Gold"
-                    data-image="Sunday-Style-Market/images/san-francisco-red-game-day-earrings.png"
-                  >
-                    Red
-                  </option>
+</article>
 
 
-                  <option
-                    value="White"
-                    data-image="Sunday-Style-Market/images/san-francisco-white-game-day-earrings.png"
-                  >
-                    White
-                  </option>
 
-                </select>
+ <!-- =====================================================
+     PRODUCT 3
+     ARIZONA RED BIRD GAME DAY EARRINGS
+====================================================== -->
 
-              </div>
+<article class="product-card paypal-product-card">
 
+  <div class="product-info">
 
-              <p class="price">
-                $18.00
-              </p>
+    <p class="product-tag">
+      🏈 GAME DAY
+    </p>
 
+    <!-- =================================================
+         PRODUCT 3 PAYPAL
+    ================================================== -->
 
-              <button class="add-cart">
-                Add to Cart 🛍️
-              </button>
+    <paypal-add-to-cart-button
+      data-id="XY2VT7U4CHVQW">
+    </paypal-add-to-cart-button>
 
-            </div>
+    <script>
+      cartPaypal.AddToCart({
+        id: "XY2VT7U4CHVQW"
+      });
+    </script>
 
-          </article>
+    <!-- =================================================
+         END PRODUCT 3 PAYPAL
+    ================================================== -->
 
+  </div>
 
+</article>
 
-          <!-- =====================
-               PRODUCT 2
-               RED & GOLD
-          ====================== -->
 
-          <article
-            class="product-card"
-            data-name="Red & Gold Game Day Earrings"
-            data-price="18"
-          >
 
-            <div class="product-image">
+<!-- =====================================================
+     PRODUCT 4
+     DALLAS BLUE STAR GAME DAY EARRINGS
+====================================================== -->
 
-              <img
-                src="Sunday-Style-Market/images/san-francisco-red-gold-game-day-earrings.png"
-                alt="Red and gold game day earrings"
-                class="product-photo"
-              />
+<article class="product-card paypal-product-card">
 
-            </div>
+  <div class="product-info">
 
+    <p class="product-tag">
+      🏈 GAME DAY
+    </p>
 
-            <div class="product-info">
+    <!-- =================================================
+         PRODUCT 4 PAYPAL
+    ================================================== -->
 
-              <p class="product-tag">
-                🏈 GAME DAY
-              </p>
+    <paypal-add-to-cart-button
+      data-id="NFDN4HBRTGJHS">
+    </paypal-add-to-cart-button>
 
+    <script>
+      cartPaypal.AddToCart({
+        id: "NFDN4HBRTGJHS"
+      });
+    </script>
 
-              <h3>
-                Red & Gold Game Day Earrings
-              </h3>
+    <!-- =================================================
+         END PRODUCT 4 PAYPAL
+    ================================================== -->
 
+  </div>
 
-              <p class="price">
-                $18.00
-              </p>
+</article>
 
 
-              <button class="add-cart">
-                Add to Cart 🛍️
-              </button>
+<!-- =====================================================
+     PRODUCT 5
+     KANSAS CITY RED & BLACK EARRINGS
+====================================================== -->
 
-            </div>
+<article class="product-card paypal-product-card">
 
-          </article>
+  <div class="product-info">
 
+    <p class="product-tag">
+      🏈 GAME DAY
+    </p>
 
+    <!-- =================================================
+         PRODUCT 5 PAYPAL
+    ================================================== -->
 
-          <!-- =====================
-               PRODUCT 3
-               ARIZONA
-          ====================== -->
+    <paypal-add-to-cart-button
+      data-id="426RQGY6NMA2C">
+    </paypal-add-to-cart-button>
 
-          <article
-            class="product-card"
-            data-name="Arizona Red Bird Game Day Earrings"
-            data-price="18"
-          >
+    <script>
+      cartPaypal.AddToCart({
+        id: "426RQGY6NMA2C"
+      });
+    </script>
 
-            <div class="product-image">
+    <!-- =================================================
+         END PRODUCT 5 PAYPAL
+    ================================================== -->
 
-              <img
-                src="Sunday-Style-Market/images/arizona-red-bird-game-day-earrings.png"
-                alt="Arizona red bird game day earrings"
-                class="product-photo"
-              />
+  </div>
 
-            </div>
+</article>
 
 
-            <div class="product-info">
+<!-- =====================================================
+     PRODUCT 6
+     GREEN & GOLD GAME DAY EARRINGS
+====================================================== -->
 
-              <p class="product-tag">
-                🏈 GAME DAY
-              </p>
+<article class="product-card paypal-product-card">
 
+  <div class="product-info">
 
-              <h3>
-                Arizona Red Bird Game Day Earrings
-              </h3>
+    <p class="product-tag">
+      🏈 GAME DAY
+    </p>
 
+    <!-- =================================================
+         PRODUCT 6 PAYPAL
+    ================================================== -->
 
-              <p class="price">
-                $18.00
-              </p>
+    <paypal-add-to-cart-button
+      data-id="87NUWXM9D3Q5N">
+    </paypal-add-to-cart-button>
 
+    <script>
+      cartPaypal.AddToCart({
+        id: "87NUWXM9D3Q5N"
+      });
+    </script>
 
-              <button class="add-cart">
-                Add to Cart 🛍️
-              </button>
+    <!-- =================================================
+         END PRODUCT 6 PAYPAL
+    ================================================== -->
 
-            </div>
+  </div>
 
-          </article>
+</article>
 
 
+<!-- =====================================================
+     PRODUCT 7
+     LOS ANGELES BLUE & GOLD EARRINGS
+====================================================== -->
 
-          <!-- =====================
-               PRODUCT 4
-               DALLAS
-          ====================== -->
+<article class="product-card paypal-product-card">
 
-          <article
-            class="product-card"
-            data-name="Dallas Blue Star Game Day Earrings"
-            data-price="18"
-          >
+  <div class="product-info">
 
-            <div class="product-image">
+    <p class="product-tag">
+      🏈 GAME DAY
+    </p>
 
-              <img
-                src="Sunday-Style-Market/images/dallas-blue-star-game-day-earrings.png"
-                alt="Dallas blue star game day earrings"
-                class="product-photo"
-              />
+    <!-- =================================================
+         PRODUCT 7 PAYPAL
+    ================================================== -->
 
-            </div>
+    <paypal-add-to-cart-button
+      data-id="29FZ4LH94NHA2">
+    </paypal-add-to-cart-button>
 
+    <script>
+      cartPaypal.AddToCart({
+        id: "29FZ4LH94NHA2"
+      });
+    </script>
 
-            <div class="product-info">
+    <!-- =================================================
+         END PRODUCT 7 PAYPAL
+    ================================================== -->
 
-              <p class="product-tag">
-                🏈 GAME DAY
-              </p>
+  </div>
 
+</article>
 
-              <h3>
-                Dallas Blue Star Game Day Earrings
-              </h3>
 
+  <!-- =====================================================
+     PRODUCT 8
+     BLUE STAR GAME DAY EARRINGS
+====================================================== -->
 
-              <p class="price">
-                $18.00
-              </p>
+<article class="product-card paypal-product-card">
 
+  <div class="product-info">
 
-              <button class="add-cart">
-                Add to Cart 🛍️
-              </button>
+    <p class="product-tag">
+      🏈 GAME DAY
+    </p>
 
-            </div>
+    <!-- =================================================
+         PRODUCT 8 PAYPAL
+    ================================================== -->
 
-          </article>
+    <paypal-add-to-cart-button
+      data-id="9XJ7RHHUR9N54">
+    </paypal-add-to-cart-button>
 
+    <script>
+      cartPaypal.AddToCart({
+        id: "9XJ7RHHUR9N54"
+      });
+    </script>
 
+    <!-- =================================================
+         END PRODUCT 8 PAYPAL
+    ================================================== -->
 
-          <!-- =====================
-               PRODUCT 5
-               KANSAS CITY
-          ====================== -->
+  </div>
 
-          <article
-            class="product-card"
-            data-name="Kansas City Red & Black Earrings"
-            data-price="18"
-          >
-
-            <div class="product-image">
-
-              <img
-                src="Sunday-Style-Market/images/chiefs.png"
-                alt="Kansas City red and black game day earrings"
-                class="product-photo"
-              />
-
-            </div>
-
-
-            <div class="product-info">
-
-              <p class="product-tag">
-                🏈 GAME DAY
-              </p>
-
-
-              <h3>
-                Kansas City Red & Black Earrings
-              </h3>
-
-
-              <p class="price">
-                $18.00
-              </p>
-
-
-              <button class="add-cart">
-                Add to Cart 🛍️
-              </button>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =====================
-               PRODUCT 6
-               GREEN & GOLD
-          ====================== -->
-
-          <article
-            class="product-card"
-            data-name="Green & Gold Game Day Earrings"
-            data-price="18"
-          >
-
-            <div class="product-image">
-
-              <img
-                src="Sunday-Style-Market/images/Green and Gold.png"
-                alt="Green and gold game day earrings"
-                class="product-photo"
-              />
-
-            </div>
-
-
-            <div class="product-info">
-
-              <p class="product-tag">
-                🏈 GAME DAY
-              </p>
-
-
-              <h3>
-                Green & Gold Game Day Earrings
-              </h3>
-
-
-              <p class="price">
-                $18.00
-              </p>
-
-
-              <button class="add-cart">
-                Add to Cart 🛍️
-              </button>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =====================
-               PRODUCT 7
-               LOS ANGELES
-          ====================== -->
-
-          <article
-            class="product-card"
-            data-name="Los Angeles Blue & Gold Earrings"
-            data-price="18"
-          >
-
-            <div class="product-image">
-
-              <img
-                src="Sunday-Style-Market/images/Rams.png"
-                alt="Los Angeles blue and gold game day earrings"
-                class="product-photo"
-              />
-
-            </div>
-
-
-            <div class="product-info">
-
-              <p class="product-tag">
-                🏈 GAME DAY
-              </p>
-
-
-              <h3>
-                Los Angeles Blue & Gold Earrings
-              </h3>
-
-
-              <p class="price">
-                $18.00
-              </p>
-
-
-              <button class="add-cart">
-                Add to Cart 🛍️
-              </button>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =====================
-               PRODUCT 8
-               BLUE STAR
-          ====================== -->
-
-          <article
-            class="product-card"
-            data-name="Blue Star Game Day Earrings"
-            data-price="18"
-          >
-
-            <div class="product-image">
-
-              <img
-                src="Sunday-Style-Market/images/blue-star-game-day-earrings.png"
-                alt="Blue star game day earrings"
-                class="product-photo"
-              />
-
-            </div>
-
-
-            <div class="product-info">
-
-              <p class="product-tag">
-                🏈 GAME DAY
-              </p>
-
-
-              <h3>
-                Blue Star Game Day Earrings
-              </h3>
-
-
-              <p class="price">
-                $18.00
-              </p>
-
-
-              <button class="add-cart">
-                Add to Cart 🛍️
-              </button>
-
-            </div>
-
-          </article>
+</article>
 
 
 
         </div>
-        <!-- END PRODUCT GRID -->
 
 
       </div>
+
 
     </section>
 
 
 
-    <!-- =========================
-         GAME DAY SECTION
-    ========================== -->
+    <!-- =====================================================
+         GAME DAY
+    ====================================================== -->
 
     <section
       class="game-day"
       id="game-day"
     >
 
+
       <div class="container game-day-wrap">
 
 
         <div>
+
 
           <p class="eyebrow">
             🏈 GAME DAY COLLECTION
@@ -875,6 +771,7 @@
 
           </p>
 
+
         </div>
 
 
@@ -888,23 +785,26 @@
 
       </div>
 
+
     </section>
 
 
 
-    <!-- =========================
+    <!-- =====================================================
          NEW ARRIVALS
-    ========================== -->
+    ====================================================== -->
 
     <section
       class="new-section"
       id="new"
     >
 
+
       <div class="container">
 
 
         <div class="section-heading center">
+
 
           <p class="eyebrow">
             ✨ SOMETHING NEW
@@ -920,6 +820,7 @@
 
             New earring designs
             are always in the works.
+
             Check back often to see
             what's been added to
             Sunday Style Market.
@@ -934,27 +835,32 @@
             Shop Earrings 💖
           </a>
 
+
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =========================
+    <!-- =====================================================
          ABOUT
-    ========================== -->
+    ====================================================== -->
 
     <section
       class="about-section"
       id="about"
     >
 
+
       <div class="container about-wrap">
 
 
         <div>
+
 
           <p class="eyebrow">
             💕 ABOUT THE SHOP
@@ -965,10 +871,12 @@
             Made to stand out.
           </h2>
 
+
         </div>
 
 
         <div>
+
 
           <p>
 
@@ -989,10 +897,12 @@
 
           </p>
 
+
         </div>
 
 
       </div>
+
 
     </section>
 
@@ -1001,16 +911,18 @@
 
 
 
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-  ========================== -->
+  ====================================================== -->
 
   <footer class="site-footer">
+
 
     <div class="container footer-wrap">
 
 
       <div>
+
 
         <h3>
           Sunday Style Market
@@ -1022,15 +934,14 @@
           for every Sunday. ✨
         </p>
 
+
       </div>
 
 
       <p>
 
         ©
-
         <span id="year"></span>
-
         Sunday Style Market
 
       </p>
@@ -1038,116 +949,132 @@
 
     </div>
 
+
   </footer>
 
 
 
-  <!-- =========================
-       SHOPPING CART
-  ========================== -->
-
-  <div
-    class="cart-panel"
-    id="cartPanel"
-  >
-
-
-    <div class="cart-header">
-
-      <h2>
-        🛍️ Your Cart
-      </h2>
-
-
-      <button
-        id="closeCart"
-        aria-label="Close cart"
-      >
-        ×
-      </button>
-
-    </div>
-
-
-
-    <div
-      id="cartItems"
-      class="cart-items"
-    >
-
-      <p class="empty-cart">
-        Your cart is empty.
-      </p>
-
-    </div>
-
-
-
-    <div class="cart-footer">
-
-
-      <div class="cart-total">
-
-        <span>
-          Total
-        </span>
-
-
-        <strong id="cartTotal">
-          $0.00
-        </strong>
-
-      </div>
-
-
-      <button
-        class="checkout-button"
-        id="checkoutButton"
-      >
-        Checkout 💳
-      </button>
-
-
-      <p class="checkout-note">
-        Secure checkout powered by Stripe.
-      </p>
-
-
-    </div>
-
-  </div>
-
-
-
-  <div
-    class="overlay"
-    id="overlay"
-  ></div>
-
-
-
-  <script src="script.js"></script>
+  <!-- =====================================================
+       PAYPAL BUTTON SETUP
+  ====================================================== -->
 
   <script>
-    const stripeCheckoutButton = document.getElementById("checkoutButton");
 
-    if (stripeCheckoutButton) {
-      stripeCheckoutButton.addEventListener("click", () => {
-        const cartCountValue = Number(
-          document.getElementById("cartCount")?.textContent || 0
+    /*
+    ==============================================
+    PAYPAL VIEW CART
+    ==============================================
+    */
+
+    cartPaypal.Cart({
+      id: "pp-view-cart"
+    });
+
+
+    /*
+    ==============================================
+    PRODUCT 1 PAYPAL ADD TO CART
+    ==============================================
+    */
+
+    cartPaypal.AddToCart({
+      id: "D5SDSHKANLT7C"
+    });
+
+
+    /*
+    ==============================================
+    PRODUCTS 2 - 8
+
+    DO NOT PUT THEIR CODE HERE YET.
+
+    WHEN PAYPAL GIVES YOU EACH PRODUCT CODE,
+    WE WILL ADD EACH NEW PRODUCT ID HERE.
+    ==============================================
+    */
+
+
+    /*
+    ==============================================
+    COPYRIGHT YEAR
+    ==============================================
+    */
+
+    const year =
+      document.getElementById("year");
+
+
+    if (year) {
+
+      year.textContent =
+        new Date().getFullYear();
+
+    }
+
+
+
+    /*
+    ==============================================
+    PRODUCT COLOR IMAGE CHANGE
+    ==============================================
+    */
+
+    document
+      .querySelectorAll(".color-select")
+      .forEach((select) => {
+
+
+        select.addEventListener(
+          "change",
+          function () {
+
+
+            const productCard =
+              this.closest(".product-card");
+
+
+            if (!productCard) {
+
+              return;
+
+            }
+
+
+            const productImage =
+              productCard.querySelector(
+                ".product-photo"
+              );
+
+
+            const selectedOption =
+              this.options[
+                this.selectedIndex
+              ];
+
+
+            const newImage =
+              selectedOption.dataset.image;
+
+
+            if (
+              productImage &&
+              newImage
+            ) {
+
+              productImage.src =
+                newImage;
+
+            }
+
+
+          }
         );
 
-        if (cartCountValue === 0) {
-          alert("Your cart is empty.");
-          return;
-        }
 
-        window.location.href =
-          "https://buy.stripe.com/eVq4gBaab5ke4lk03vcs800";
       });
-    }
-  </script>
 
+
+  </script>
 
 
 </body>

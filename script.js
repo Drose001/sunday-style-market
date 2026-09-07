@@ -1,313 +1,202 @@
-const cart = [];
-
-const cartCount = document.getElementById("cartCount");
-const cartButton = document.getElementById("cartButton");
-const cartPanel = document.getElementById("cartPanel");
-const closeCart = document.getElementById("closeCart");
-const overlay = document.getElementById("overlay");
-const cartItems = document.getElementById("cartItems");
-const cartTotal = document.getElementById("cartTotal");
-const checkoutButton = document.getElementById("checkoutButton");
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+// =====================================================
+// SUNDAY STYLE MARKET
+// PAYPAL CART + PRODUCT IMAGE OPTIONS
+// NO STRIPE
+// =====================================================
 
 
-// =========================
-// CHANGE PRODUCT IMAGE
-// WHEN COLOR CHANGES
-// =========================
+// =====================================================
+// COPYRIGHT YEAR
+// =====================================================
 
-document.querySelectorAll(".color-select").forEach((select) => {
+const year = document.getElementById("year");
 
-  select.addEventListener("change", () => {
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
-    const card = select.closest(".product-card");
 
-    const image =
-      card.querySelector(".product-option-image");
+// =====================================================
+// PRODUCT COLOR IMAGE CHANGE
+// =====================================================
 
-    const selectedOption =
-      select.options[select.selectedIndex];
+document
+  .querySelectorAll(".color-select")
+  .forEach((select) => {
 
-    const newImage =
-      selectedOption.dataset.image;
+    select.addEventListener("change", function () {
 
-    if (image && newImage) {
-      image.src = newImage;
-    }
+      const productCard =
+        this.closest(".product-card");
 
-  });
+      if (!productCard) {
+        return;
+      }
 
-});
 
-// =========================
-// ADD TO CART
-// =========================
+      const productImage =
+        productCard.querySelector(".product-photo");
 
-document.querySelectorAll(".add-cart").forEach((button) => {
+      if (!productImage) {
+        return;
+      }
 
-  button.addEventListener("click", () => {
 
-    const card = button.closest(".product-card");
+      const selectedOption =
+        this.options[this.selectedIndex];
 
-    const image = card.querySelector(".product-photo");
+      const newImage =
+        selectedOption.dataset.image;
 
-    const name = card.dataset.name;
-    const price = Number(card.dataset.price);
 
-    const existingItem = cart.find(
-      (item) => item.name === name
-    );
+      if (newImage) {
+        productImage.src = newImage;
+      }
 
-    if (existingItem) {
-
-      existingItem.quantity += 1;
-
-    } else {
-
-      cart.push({
-        name: name,
-        price: price,
-        image: image ? image.src : "",
-        quantity: 1
-      });
-
-    }
-
-    updateCart();
-    openCart();
+    });
 
   });
 
-});
 
+// =====================================================
+// PAYPAL CART
+// =====================================================
 
-// =========================
-// UPDATE CART
-// =========================
+function startPayPalCart() {
 
-function updateCart() {
+  // Make sure PayPal loaded correctly
+  if (typeof cartPaypal === "undefined") {
 
-  const totalQuantity = cart.reduce(
-    (sum, item) => sum + item.quantity,
-    0
-  );
-
-  cartCount.textContent = totalQuantity;
-
-
-  if (cart.length === 0) {
-
-    cartItems.innerHTML = `
-      <p class="empty-cart">
-        Your cart is empty.
-      </p>
-    `;
-
-    cartTotal.textContent = "$0.00";
+    console.error("PayPal cart script did not load.");
 
     return;
-
   }
 
 
-  cartItems.innerHTML = cart
-    .map(
-      (item, index) => `
-
-        <div class="cart-item">
-
-          <div class="cart-item-left">
-
-            ${
-              item.image
-                ? `
-                  <img
-                    src="${item.image}"
-                    alt="${item.name}"
-                    class="cart-item-image"
-                  />
-                `
-                : ""
-            }
-
-            <div class="cart-item-details">
-
-              <strong>
-                ${item.name}
-              </strong>
-
-              <p>
-                $${item.price.toFixed(2)} each
-              </p>
-
-
-              <div class="quantity-controls">
-
-                <button
-                  class="quantity-btn"
-                  onclick="decreaseQuantity(${index})"
-                >
-                  −
-                </button>
-
-                <span class="quantity-number">
-                  ${item.quantity}
-                </span>
-
-                <button
-                  class="quantity-btn"
-                  onclick="increaseQuantity(${index})"
-                >
-                  +
-                </button>
-
-              </div>
-
-              <p class="item-subtotal">
-                $${(item.price * item.quantity).toFixed(2)}
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <button
-            class="remove-item"
-            onclick="removeItem(${index})"
-          >
-            Remove
-          </button>
-
-        </div>
-
-      `
-    )
-    .join("");
-
-
-  const total = cart.reduce(
-    (sum, item) =>
-      sum + item.price * item.quantity,
-    0
-  );
-
-  cartTotal.textContent =
-    `$${total.toFixed(2)}`;
-
-}
-
-
-// =========================
-// INCREASE QUANTITY
-// =========================
-
-function increaseQuantity(index) {
-
-  cart[index].quantity += 1;
-
-  updateCart();
-
-}
-
-
-// =========================
-// DECREASE QUANTITY
-// =========================
-
-function decreaseQuantity(index) {
-
-  if (cart[index].quantity > 1) {
-
-    cart[index].quantity -= 1;
-
-  } else {
-
-    cart.splice(index, 1);
-
-  }
-
-  updateCart();
-
-}
-
-
-// =========================
-// REMOVE ITEM
-// =========================
-
-function removeItem(index) {
-
-  cart.splice(index, 1);
-
-  updateCart();
-
-}
-
-
-// =========================
-// OPEN CART
-// =========================
-
-function openCart() {
-
-  cartPanel.classList.add("open");
-
-  overlay.classList.add("show");
-
-}
-
-
-// =========================
-// CLOSE CART
-// =========================
-
-function closeCartPanel() {
-
-  cartPanel.classList.remove("open");
-
-  overlay.classList.remove("show");
-
-}
-
-
-cartButton.addEventListener(
-  "click",
-  openCart
-);
-
-closeCart.addEventListener(
-  "click",
-  closeCartPanel
-);
-
-overlay.addEventListener(
-  "click",
-  closeCartPanel
-);
-
-
-// =========================
-// CHECKOUT
-// =========================
-
-checkoutButton.addEventListener(
-  "click",
-  () => {
-
-    if (cart.length === 0) {
-
-      alert("Your cart is empty.");
-
-      return;
-
-    }
-
-    alert(
-      "Checkout will be connected after we finish the store and payment setup."
+  // ===================================================
+  // PAYPAL VIEW CART
+  // ===================================================
+
+  const viewCart =
+    document.querySelector(
+      'paypal-cart-button[data-id="pp-view-cart"]'
     );
 
+
+  if (viewCart) {
+
+    cartPaypal.Cart({
+      id: "pp-view-cart"
+    });
+
   }
-);
+
+
+  // ===================================================
+  // PRODUCT 1 PAYPAL ADD TO CART
+  // ===================================================
+
+  const product1 =
+    document.querySelector(
+      'paypal-add-to-cart-button[data-id="D5SDSHKANLT7C"]'
+    );
+
+
+  if (product1) {
+
+    cartPaypal.AddToCart({
+      id: "D5SDSHKANLT7C"
+    });
+
+  }
+
+
+// ===================================================
+// PRODUCT 2 PAYPAL
+// RED & GOLD GAME DAY EARRINGS
+// ===================================================
+
+cartPaypal.AddToCart({
+  id: "R92AYB4HJM536"
+});
+
+
+  // ===================================================
+  // 🔴 PRODUCT 3 PAYPAL
+  // ADD PRODUCT 3 ID HERE LATER
+  // ===================================================
+
+  /*
+  cartPaypal.AddToCart({
+    id: "PUT_PRODUCT_3_PAYPAL_ID_HERE"
+  });
+  */
+
+
+  // ===================================================
+  // 🔴 PRODUCT 4 PAYPAL
+  // ADD PRODUCT 4 ID HERE LATER
+  // ===================================================
+
+  /*
+  cartPaypal.AddToCart({
+    id: "PUT_PRODUCT_4_PAYPAL_ID_HERE"
+  });
+  */
+
+
+  // ===================================================
+  // 🔴 PRODUCT 5 PAYPAL
+  // ADD PRODUCT 5 ID HERE LATER
+  // ===================================================
+
+  /*
+  cartPaypal.AddToCart({
+    id: "PUT_PRODUCT_5_PAYPAL_ID_HERE"
+  });
+  */
+
+
+  // ===================================================
+  // 🔴 PRODUCT 6 PAYPAL
+  // ADD PRODUCT 6 ID HERE LATER
+  // ===================================================
+
+  /*
+  cartPaypal.AddToCart({
+    id: "PUT_PRODUCT_6_PAYPAL_ID_HERE"
+  });
+  */
+
+
+  // ===================================================
+  // 🔴 PRODUCT 7 PAYPAL
+  // ADD PRODUCT 7 ID HERE LATER
+  // ===================================================
+
+  /*
+  cartPaypal.AddToCart({
+    id: "PUT_PRODUCT_7_PAYPAL_ID_HERE"
+  });
+  */
+
+
+  // ===================================================
+  // 🔴 PRODUCT 8 PAYPAL
+  // ADD PRODUCT 8 ID HERE LATER
+  // ===================================================
+
+  /*
+  cartPaypal.AddToCart({
+    id: "PUT_PRODUCT_8_PAYPAL_ID_HERE"
+  });
+  */
+
+}
+
+
+// =====================================================
+// START PAYPAL
+// =====================================================
+
+startPayPalCart();
